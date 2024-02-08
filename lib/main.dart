@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sathvik_malgikar_sample/best_for_grid.dart';
 import 'cards.dart';
 import 'stack1.dart';
 
@@ -68,28 +69,32 @@ class _MyHomePageState extends State<MyHomePage> {
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+    return MaterialApp(
+      title: "Sathvik Malgikar",
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: Column(children: [
+          Stack1,
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: Text("Best for you",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+          ),
+          BestForGrid(),
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: Text("Challenge",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+          ),
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: Text("Fast Warmup",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+          ),
+        ]),
       ),
-      body: Column(children: [
-        Stack1,
-        Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: Text("Best for you",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-        ),
-        Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: Text("Challenge",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-        ),
-        Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: Text("Fast Warmup",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-        ),
-      ]),
     );
   }
 }
