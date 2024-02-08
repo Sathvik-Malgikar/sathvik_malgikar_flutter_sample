@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'cards.dart';
+import 'stack1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -72,37 +73,21 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Column(children: [
-        Stack(
-          children: [
-            Container(
-              margin: EdgeInsets.all(10),
-              padding: EdgeInsets.all(10),
-              child: Image.network(
-                "https://prod-ne-cdn-media.puregym.com/media/819394/gym-workout-plan-for-gaining-muscle_header.jpg?quality=80",
-                height: 200,
-              ),
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
-              clipBehavior: Clip.hardEdge,
-            ),
-            Positioned(
-                child: Column(
-                  children: [
-                    Text("Best Quarantine Workout",
-                        style: TextStyle(
-                          fontSize: 27,
-                        )),
-                    const Text(
-                      "See more >",
-                      style: TextStyle(
-                          fontSize: 17,
-                          color: Color.fromARGB(255, 255, 223, 0)),
-                    ),
-                  ],
-                ),
-                left: 30,
-                top: 70)
-          ],
+        Stack1,
+        Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: Text("Best for you",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+        ),
+        Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: Text("Challenge",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+        ),
+        Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: Text("Fast Warmup",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
         ),
       ]),
     );
