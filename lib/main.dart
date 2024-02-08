@@ -66,21 +66,35 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
-   
+
     return Scaffold(
       appBar: AppBar(
-     
         title: Text(widget.title),
       ),
-      body: Center(
- 
-        child: Column(
-     
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
+      body: Stack(fit: StackFit.expand, alignment: Alignment.center, children: [
+        Positioned(
+          top: 5,
+          left: 0,
+          child: Image.network(
+            "https://prod-ne-cdn-media.puregym.com/media/819394/gym-workout-plan-for-gaining-muscle_header.jpg?quality=80",
+            height: 200,
+          ),
         ),
-      ),
- 
+        ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxHeight: 10,
+            ),
+            child: Stack(children: [
+              Text("Best Quarantine Workout",
+                  style: TextStyle(
+                      fontSize: 30, color: Color.fromARGB(255, 255, 255, 255))),
+              const Text(
+                "See more >",
+                style: TextStyle(
+                    fontSize: 17, color: Color.fromARGB(255, 255, 223, 0)),
+              ),
+            ]))
+      ]),
     );
   }
 }
