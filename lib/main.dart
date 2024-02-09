@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sathvik_malgikar_sample/best_for_grid.dart';
 import 'cards.dart';
 import 'challenge_row.dart';
+import 'footer.dart';
 import 'warmup_row.dart';
 import 'topbanner.dart';
 
@@ -67,7 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Text("Fast Warmup",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
         ),
-WarmupRow
+Flexible(child: WarmupRow,flex:1),
+Footer()
       ]),
     );
   }
