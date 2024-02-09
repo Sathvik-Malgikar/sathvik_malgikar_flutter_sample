@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sathvik_malgikar_sample/best_for_grid.dart';
 import 'cards.dart';
-import 'stack1.dart';
+import 'challenge_row.dart';
+import 'topbanner.dart';
 
 void main() {
   runApp(const MyApp());
@@ -75,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-        Flexible(child: Stack1,flex: 2,fit:FlexFit.loose),
+        Flexible(child: TopBanner,flex: 2,fit:FlexFit.loose),
         const Align(
           alignment: AlignmentDirectional.centerStart,
           child: Text("Best for you",
@@ -87,6 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Text("Challenge",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
         ),
+        Flexible(child: ChallengeRow,flex: 1,),
         const Align(
           alignment: AlignmentDirectional.centerStart,
           child: Text("Fast Warmup",

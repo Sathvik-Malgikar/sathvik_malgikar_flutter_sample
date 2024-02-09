@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-export "stack1.dart";
 
-Widget Stack1 = Stack(
+
+Widget TopBanner = Stack(
   children: [
     Container(
       margin: EdgeInsets.all(10),

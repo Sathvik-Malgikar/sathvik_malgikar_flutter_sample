@@ -18,10 +18,10 @@ class BestForGrid extends StatelessWidget {
     return GridView.count(
       scrollDirection: Axis.horizontal, 
       crossAxisCount: 2,  
-      mainAxisSpacing: 14.0, 
+      mainAxisSpacing: 10.0, 
       crossAxisSpacing: 10.0, 
-       childAspectRatio: 0.6, 
-      padding: EdgeInsets.all(5.0), 
+       childAspectRatio: 0.5, 
+      padding: EdgeInsets.all(4.0), 
       children: List.generate(4, (index) {
         return CustomCard( imgSrcText: data[index][0],titleText : data[index][1],timeText : data[index][2],difficultyText: data[index][3]);
       }),

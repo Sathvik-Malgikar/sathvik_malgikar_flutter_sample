@@ -3,12 +3,12 @@ export "cards.dart";
 
 class ChallengeCard extends StatelessWidget {
   final String title;
-  final String thumbnailSrc;
+  final Icon thumbnail;
   final Color background;
 
   const ChallengeCard(
       {required this.title,
-      required this.thumbnailSrc,
+      required this.thumbnail,
       required this.background,
       Key? key})
       : super(key: key);
@@ -16,12 +16,32 @@ class ChallengeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      constraints: BoxConstraints(maxWidth: 100, maxHeight: 100),
       padding: const EdgeInsets.all(2),
-      margin: const EdgeInsets.all(2),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(3)),
-      color: background,
+      margin: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(6), color: background),
       alignment: Alignment.bottomCenter,
-      child: Row(children: [Text(title), Image.network(thumbnailSrc)]),
+      child: Stack(children: [
+        Positioned(
+          child: Container(
+            child: Text(
+              title,
+              style: TextStyle(
+                  color:
+                      background == Colors.black ? Colors.white : Colors.black),
+            ),
+            width: 60,
+          ),
+          left: 2,
+          bottom: 10,
+        ),
+        Positioned(
+          child: thumbnail,
+          right: 10,
+          bottom: 10,
+        )
+      ]),
     );
   }
 }
@@ -44,18 +64,23 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       color: Colors.white,
-      padding: const EdgeInsets.all(2),
       margin: const EdgeInsets.all(2),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Image.network(imgSrcText, width: 70,),
+          Container(
+            child: Image.network(
+              imgSrcText,
+              width: 100,
+            ),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+            clipBehavior: Clip.hardEdge,
+          ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                margin: const EdgeInsets.symmetric(vertical: 2),
                 child: Text(titleText),
               ),
               Text(difficultyText,
