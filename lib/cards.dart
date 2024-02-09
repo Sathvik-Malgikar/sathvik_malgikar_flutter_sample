@@ -26,13 +26,13 @@ class ChallengeCard extends StatelessWidget {
   }
 }
 
-class Card extends StatelessWidget {
+class CustomCard extends StatelessWidget {
   final String imgSrcText;
   final String titleText;
   final String timeText;
   final String difficultyText;
 
-  const Card(
+  const CustomCard(
       {required this.imgSrcText,
       required this.titleText,
       required this.timeText,
@@ -44,12 +44,15 @@ class Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      
+      color: Colors.white,
       padding: const EdgeInsets.all(2),
       margin: const EdgeInsets.all(2),
       child: Row(
         children: [
-          Image.network(imgSrcText, width: 20),
+          Image.network(imgSrcText, width: 70,),
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 2),

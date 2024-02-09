@@ -69,32 +69,30 @@ class _MyHomePageState extends State<MyHomePage> {
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
 
-    return MaterialApp(
-      title: "Sathvik Malgikar",
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: Column(children: [
-          Stack1,
-          Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: Text("Best for you",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-          ),
-          BestForGrid(),
-          Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: Text("Challenge",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-          ),
-          Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: Text("Fast Warmup",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-          ),
-        ]),
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 245, 245, 245),
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
+      body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+        Flexible(child: Stack1,flex: 2,fit:FlexFit.loose),
+        const Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: Text("Best for you",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+        ),
+        Flexible(child: BestForGrid(),flex: 1,),
+        const Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: Text("Challenge",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+        ),
+        const Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: Text("Fast Warmup",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+        ),
+      ]),
     );
   }
 }
