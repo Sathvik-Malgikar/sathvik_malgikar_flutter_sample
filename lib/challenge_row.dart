@@ -7,7 +7,7 @@ List<List> data = [
     const Icon(
       Icons.local_fire_department_outlined,
       color: Colors.grey,
-      size: 108.0,
+      size: 50.0,
     ),
     Colors.yellow
   ],
@@ -16,7 +16,7 @@ List<List> data = [
     const Icon(
       Icons.directions_run_outlined,
       color: Colors.grey,
-      size: 108.0,
+      size: 50.0,
     ),
     Colors.black
   ],
@@ -25,7 +25,7 @@ List<List> data = [
     const Icon(
       Icons.fitness_center,
       color: Colors.grey,
-      size: 108.0,
+      size: 50.0,
     ),
     Colors.white
   ],
